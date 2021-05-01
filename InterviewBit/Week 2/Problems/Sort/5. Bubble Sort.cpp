@@ -19,6 +19,7 @@ void bubbleSort(vector<int> &A) {
         }
     }
 }
+
 int main() {
     vector<int> A = {5, 2, -10, 5, 33, 6, 7};
 
