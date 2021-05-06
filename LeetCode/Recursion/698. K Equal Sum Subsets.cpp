@@ -17,12 +17,13 @@ bool canPartitionKSubsets(vector<int>& nums, int k) {
     int sum       = 0;
     int n         = nums.size();
 
-    for (int i: nums) sum += i;
+    for (int i: nums) {
+        sum += i;  
+        if (i > target) return false; 
+    } 
 
     int target = sum / k;
-
-    sort(nums.begin(), nums.end());
-    if (sum % k != 0 || nums[n-1] > target) return false;
+    if (sum % k != 0) return false;
 
     return canPartitionKSubsetsInternal(nums, k, n, target, parts);
 }
