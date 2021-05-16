@@ -19,7 +19,7 @@ bool isSubsetSum(vector<int>& nums, int sum) {
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= sum; j++) {
             dp[i][j] = dp[i-1][j];
-            if (j >= nums[i-1]) dp[i][j] = dp[i-1][j-nums[i-1]];
+            if (j >= nums[i-1]) dp[i][j] = dp[i][j] || dp[i-1][j-nums[i-1]];
         }
     }
 
